@@ -9,7 +9,7 @@ class RestrictedInternet {
         // intercept funktionsaufruf und leite an target weiter
         return function(...args) {
             if(self.bannedSites.includes(args[0])) {
-                throw 'Acces denied';
+                throw new Error('Acces denied');
             }
             target[property].call(target, args[0]);
         }
