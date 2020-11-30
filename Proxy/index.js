@@ -4,5 +4,4 @@ import {InternetConnection} from "./InternetConnection.js";
     const internet = InternetConnection.create();
     internet.connectTo('ibw.com');
     internet.connectTo('abc.com');
-
 })();
