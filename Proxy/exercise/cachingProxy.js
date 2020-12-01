@@ -11,7 +11,6 @@ const createCachedFunction = (func) => {
          *   - it not, call targeted function and store result in cache
          * - return new proxy object instead of function result
          **/
-        apply: function (target, that, args) {}
     }
     return func;
 };
