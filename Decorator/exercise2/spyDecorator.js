@@ -5,11 +5,12 @@ function login(username, password) {
     console.log("logging in with username: " + username);
 }
 
-// decorator
+
 function spy(func) {
     function wrapper(...args) {
-        // todo: implementiere hier:
-        // der spy soll alle funktionsaufrufe von "login" im array "calls" speichern und die dabei mitgegebenen parameter
+        // using ...args instead of arguments to store "real" array in wrapper.calls
+        wrapper.calls.push(args);
+        return func(...args);
     }
     wrapper.calls = [];
     return wrapper;
