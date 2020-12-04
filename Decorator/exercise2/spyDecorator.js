@@ -6,6 +6,7 @@ function login(username, password) {
 }
 
 
+
 function spy(func) {
     function wrapper(...args) {
         // using ...args instead of arguments to store "real" array in wrapper.calls
