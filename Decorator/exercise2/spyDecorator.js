@@ -6,11 +6,10 @@ function login(username, password) {
 }
 
 // decorator
-function spy(func) {
-    function wrapper(...args) {
-        // todo: implementiere hier:
-        // der spy soll alle funktionsaufrufe von "login" im array "calls" speichern und die dabei mitgegebenen parameter
-    }
+// todo: implementiere:
+// der spy soll alle funktionsaufrufe von "login" im array "calls" speichern und die dabei mitgegebenen params
+function spy() {
+    function wrapper() {}
     wrapper.calls = [];
     return wrapper;
 }
