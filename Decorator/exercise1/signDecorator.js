@@ -13,7 +13,7 @@ function Album(price) {
  * verbessere die funktion
  */
 
-function sign(func, context) {
+function sign(func) {
     return function() {
         return func.call(this) * 2;
     }
