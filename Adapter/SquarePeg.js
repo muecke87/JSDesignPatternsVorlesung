@@ -2,7 +2,7 @@ export {SquarePeg}
 
 class SquarePeg {
     constructor(width) {
-    this.width = width
+        this.width = width
     }
 
     getWidth() {
