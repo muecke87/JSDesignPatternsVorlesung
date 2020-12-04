@@ -7,12 +7,6 @@ function Album(price) {
     }
 }
 
-// decorator
-/**
- * todo: funktioniert nicht immer, weshalb?
- * verbessere die funktion
- */
-
 /*
  sicherste variante mit übergabe des contexts
  ohne context und via "this" würde folgender call fehlschlagen:
