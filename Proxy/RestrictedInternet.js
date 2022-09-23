@@ -7,11 +7,11 @@ class RestrictedInternet {
     get(target, property) {
         const self = this;
         // intercept funktionsaufruf und leite an target weiter
-        return function(...args) {
-            if(self.bannedSites.includes(args[0])) {
+        return function() {
+            if(self.bannedSites.includes(arguments[0])) {
                 throw new Error('Acces denied');
             }
-            target[property].call(target, args[0]);
+            target[property].call(target, arguments[0]);
         }
     }
 }
