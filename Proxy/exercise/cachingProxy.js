@@ -12,7 +12,7 @@ const createCachedFunction = (func) => {
                 return this.cache[argument]; // return stored function result
             }
             // if the function was never called we call it and store the result in our cache
-            this.cache[argument] = target(...args);
+            this.cache[argument] = target(args);
             return this.cache[argument];
         }
     }
@@ -21,13 +21,12 @@ const createCachedFunction = (func) => {
 
 
 const slow = (arg) => {
-    const promise = new Promise(function (resolve) {
+    return new Promise(function (resolve) {
         console.log('Slow function called');
         global.setTimeout(() => {
             resolve('called with: ' + arg);
         }, 3000);
     });
-    return promise;
 };
 
 const cachedFunction = createCachedFunction(slow);
