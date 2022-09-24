@@ -2,16 +2,25 @@ const createCachedFunction = (func) => {
     const handler = {
         // cache where we store the arguments we already called and their result
         cache: {},
-        /**
-         * @todo:
-         * - use apply-trap to intercept function call
-         * - assume the function only takes one argument
-         * - check if function was already called with given argument (hint: use 'hasOwnProperty')
-         *   - if so, return stored ('cached') result
-         *   - it not, call targeted function and store result in cache
-         * - return new proxy object instead of function result
-         **/
+        // using apply-trap to intercept function call
+        apply: function (target, that, args) {
+            // we are assuming the function only takes one argument
+            const argument = args[0];
+            // we check if the function was already called with this argument
+
+            /*
+                @todo: add your code here
+                - check if function was already called with given argument (hint: use 'hasOwnProperty')
+                - if so, return stored ('cached') result
+             */
+
+            // if the function was never called we call it and store the result in our cache
+            this.cache[argument] = target(args);
+            return this.cache[argument];
+        }
     }
+
+    // todo: return proxy instead of func
     return func;
 };
 
